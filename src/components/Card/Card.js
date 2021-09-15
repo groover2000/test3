@@ -31,7 +31,7 @@ function Card({id, imgUrl, title, year, genres, summary}) {
     }}>
     
         <div className="card-top" >
-            <img src={imgUrl} alt="film" />
+            <img src ={imgUrl}  alt="film" />
         </div>
         <div className="card-bottom">
             <p className="card-title">{title}</p>

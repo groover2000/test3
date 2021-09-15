@@ -1,30 +1,49 @@
 import {React, useState, useEffect} from "react";
 import './RouterHome.css';
 import { Card } from "../../components/Card/Card";
-// import {getFilms, movies} from "./../../api/getFetch.js"
+import {FetchRequest} from "../../api/getFetch"
+import {Loader} from "../../components/Loader/Loader"
+import {getPageCount} from "../../helpers/getPageCount"
+import {pagination} from "../../components/pagination/pagination"
+import {RenderPagination} from "../../components/pagination/paginationRender"
+
 
 function RouterHome(){
     const [loading, setLoading] = useState(true);
     const [movies, setMovies] = useState([])
+    const [limit, setLimit] = useState(10);
+    const [page, setPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(0);
+    // let arr = pagination(totalPages, page);
 
     const getFilms = async () => {
-        const response = await (await fetch('https://yts.mx/api/v2/list_movies.json'))
-        const {data: {movies}} = await response.json()
-        // console.log(movies)
-        setMovies(movies)
+        const posts = FetchRequest.getAllPosts(limit, page)
+        const {data} = await posts;
+        setMovies(data.movies)
+        setTotalPages( getPageCount(data.movie_count, limit)) 
         setLoading(false);
+    }
+   
+    const rightClick = (e) => {
+        console.log(e.target.dataset.value)
+    }
+    const leftClick = (e) => {
+        console.log(e.target.dataset.value)
+    }
+    const pageClick = (e) => {
+        console.log(e.target.dataset.value)
+        setPage(e.target.dataset.value)
         
     }
-
     useEffect(() => {
-        getFilms()
-  
-    },[] )
+       getFilms()
+ 
+    },[page] )
 
     
 
     if(loading) {
-        return <div>Loading...</div>
+        return <Loader/>
     }
     return <div className = 'container'> 
     <div className="cards">
@@ -40,6 +59,15 @@ function RouterHome(){
        />
        
     })}</div>
+    <RenderPagination
+    total = {totalPages}
+    current = {page}
+    pagePerview = {0}
+    rightClick = {rightClick}
+    leftClick = {leftClick}
+    pageClick = {pageClick}
+    ></RenderPagination>
+  
  </div>
    
      

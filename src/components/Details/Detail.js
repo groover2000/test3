@@ -14,7 +14,7 @@ function Detail(props) {
         return 0;
     }else {
         console.log(data)
-        return <div>
+        return <div className= "container">
             <Card  
             id = {data.id} 
             imgUrl = {data.imgUrl}

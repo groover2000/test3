@@ -1,12 +1,13 @@
 
-//  let movie = []
-//  const getFilms = async () => {
-//     const response = await (await fetch('https://yts.mx/api/v2/list_movies.json'))
-//     const {data: {movies}} = await response.json()
-//     // console.log(movies)
-//     // setMovies(movies)
-//     // setLoading(false);
-//     movie = movies;
+ class FetchRequest {
     
-// }
-// export  {getFilms, movie}
+  static  async getAllPosts(limit = 10, page = 1) {
+        const response =  (await fetch(`https://yts.mx/api/v2/list_movies.json?limit=${limit}&page=${page}`))
+        // const {data: {movies}} = await response.json()
+        const res = response.json()
+        return res;
+    }
+  
+ }
+
+export {FetchRequest}

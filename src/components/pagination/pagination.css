@@ -1,0 +1,10 @@
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pagination-element {
+    padding: 10px;
+    border: 1px solid grey;
+    cursor: pointer;
+}

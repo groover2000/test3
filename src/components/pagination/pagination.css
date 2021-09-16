@@ -1,10 +1,17 @@
 .pagination {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .pagination-element {
     padding: 10px;
     border: 1px solid grey;
+    cursor: pointer;
+}
+
+.active {
+    padding: 10px;
+    border: 1px solid red;
     cursor: pointer;
 }

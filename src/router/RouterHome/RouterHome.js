@@ -4,8 +4,8 @@ import { Card } from "../../components/Card/Card";
 import {FetchRequest} from "../../api/getFetch"
 import {Loader} from "../../components/Loader/Loader"
 import {getPageCount} from "../../helpers/getPageCount"
-import {pagination} from "../../components/pagination/pagination"
-import {RenderPagination} from "../../components/pagination/paginationRender"
+import {Pagination } from "../../components/pagination/pagination"
+// import {RenderPagination} from "../../components/pagination/paginationRender"
 
 
 function RouterHome(){
@@ -25,19 +25,26 @@ function RouterHome(){
     }
    
     const rightClick = (e) => {
-        console.log(e.target.dataset.value)
+        console.log('right')
+        setPage(page + 1)
     }
     const leftClick = (e) => {
-        console.log(e.target.dataset.value)
+        console.log('left')
+        if(page > 0) {
+
+            setPage(page - 1)
+        }
+       
     }
     const pageClick = (e) => {
         console.log(e.target.dataset.value)
-        setPage(e.target.dataset.value)
+        setPage(Number(e.target.dataset.value))
         
     }
     useEffect(() => {
-       getFilms()
- 
+
+            getFilms()
+
     },[page] )
 
     
@@ -59,14 +66,23 @@ function RouterHome(){
        />
        
     })}</div>
-    <RenderPagination
+    <Pagination 
+     totalPages = {totalPages} 
+     itemsPerView = {limit}
+     currentPage ={page}
+     pageClick = {pageClick}
+     leftClick = {leftClick}
+     rightClick = {rightClick}/>
+
+
+    {/* <RenderPagination
     total = {totalPages}
     current = {page}
     pagePerview = {0}
     rightClick = {rightClick}
     leftClick = {leftClick}
     pageClick = {pageClick}
-    ></RenderPagination>
+    ></RenderPagination> */}
   
  </div>
    

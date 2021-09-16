@@ -33,7 +33,7 @@ function pagination(totalPages, currentPage, pagePerView = 0) {
             }
             case (hasLeftSpill && hasRightSpill): 
             default: {
-                const extraPages = range(startPage, endPage)
+                // const extraPages = range(startPage, endPage)
                 pages = [LEFT_PAGE, ...pages, RIGHT_PAGE];
                 break;
             }

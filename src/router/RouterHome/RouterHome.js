@@ -17,6 +17,7 @@ function RouterHome(){
     // let arr = pagination(totalPages, page);
 
     const getFilms = async () => {
+        setLoading(true);
         const posts = FetchRequest.getAllPosts(limit, page)
         const {data} = await posts;
         setMovies(data.movies)

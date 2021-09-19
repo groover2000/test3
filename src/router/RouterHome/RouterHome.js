@@ -16,6 +16,7 @@ function RouterHome() {
   const [totalPages, setTotalPages] = useState(0);
   const [searchValue, setSearchValue] = useState("");
   // let arr = pagination(totalPages, page);
+  const [isSearch, setisSearch] = useState(false);
 
   const getFilms = async () => {
     setLoading(true);
@@ -28,7 +29,8 @@ function RouterHome() {
 
   const getSortedFilms = async () => {
     setLoading(true);
-    const posts = FetchRequest.getPostsbyName(searchValue);
+    setisSearch(true);
+    const posts = FetchRequest.getPostsbyName(searchValue, page);
     const { data } = await posts;
     setMovies(data.movies);
     setTotalPages(getPageCount(data.movie_count, limit));
@@ -54,7 +56,11 @@ function RouterHome() {
     setPage(Number(e.target.dataset.value));
   };
   useEffect(() => {
-    getFilms();
+    if (isSearch) {
+      getSortedFilms();
+    } else {
+      getFilms();
+    }
   }, [page]);
 
   if (loading) {

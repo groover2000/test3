@@ -7,9 +7,9 @@ class FetchRequest {
     const res = response.json();
     return res;
   }
-  static async getPostsbyName(name) {
+  static async getPostsbyName(name, page) {
     const response = await fetch(
-      `https://yts.mx/api/v2/list_movies.json?query_term=${name}`
+      `https://yts.mx/api/v2/list_movies.json?query_term=${name}&page=${page}`
     );
     // const {data: {movies}} = await response.json()
     const res = response.json();

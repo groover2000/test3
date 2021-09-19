@@ -1,17 +1,31 @@
 .pagination {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .pagination-element {
-    padding: 10px;
-    border: 1px solid grey;
-    cursor: pointer;
+  padding: 10px;
+  border: 1px solid grey;
+  cursor: pointer;
+  color: blue;
+}
+.pagination-element:last-child {
+  border-radius: 0% 30% 30% 0;
+}
+.pagination-element:first-child {
+  border-radius: 30% 0% 0% 30%;
+}
+
+.pagination-element:hover {
+  background-color: grey;
+}
+.active:hover {
+  background-color: grey;
 }
 
 .active {
-    padding: 10px;
-    border: 1px solid red;
-    cursor: pointer;
+  padding: 10px;
+  border: 2px solid blue;
+  cursor: pointer;
 }

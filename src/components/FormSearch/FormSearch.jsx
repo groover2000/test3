@@ -10,8 +10,8 @@ const FormSearch = ({ searchFunc, searchValue, setSeaarchValue }) => {
           placeholder="Поиск..."
           value={searchValue}
           onChange={(e) => {
-            setValue(e.target.value);
-            setSeaarchValue(value);
+            // setValue(e.target.value);
+            setSeaarchValue(e.target.value);
           }}
         />
         <input type="button" value="search" onClick={searchFunc} />

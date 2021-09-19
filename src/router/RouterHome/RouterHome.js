@@ -30,7 +30,7 @@ function RouterHome() {
   const getSortedFilms = async () => {
     setLoading(true);
     setisSearch(true);
-    const posts = FetchRequest.getPostsbyName(searchValue, page);
+    const posts = FetchRequest.getPostsbyName(searchValue, page, limit);
     const { data } = await posts;
     setMovies(data.movies);
     setTotalPages(getPageCount(data.movie_count, limit));

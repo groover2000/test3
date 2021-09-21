@@ -1,0 +1,22 @@
+.wrapper {
+  margin: 30px;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form-input {
+  flex-grow: 1;
+  padding: 10px;
+  font-weight: 700;
+}
+.form-btn {
+  background-color: darkgray;
+  cursor: pointer;
+  border: 1px solid #000;
+  font-weight: 700;
+  min-width: 100px;
+}

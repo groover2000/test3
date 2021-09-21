@@ -9,12 +9,13 @@
   border: 1px solid grey;
   cursor: pointer;
   color: blue;
+  font-weight: 700;
 }
 .pagination-element:last-child {
-  border-radius: 0% 30% 30% 0;
+  border-radius: 0% 20% 20% 0;
 }
 .pagination-element:first-child {
-  border-radius: 30% 0% 0% 30%;
+  border-radius: 20% 0% 0% 20%;
 }
 
 .pagination-element:hover {

@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/test3/static/css/main.1ce133ca.chunk.css",
-    "main.js": "/test3/static/js/main.f483a104.chunk.js",
-    "main.js.map": "/test3/static/js/main.f483a104.chunk.js.map",
+    "main.css": "/test3/static/css/main.02b2d696.chunk.css",
+    "main.js": "/test3/static/js/main.78d5bb5b.chunk.js",
+    "main.js.map": "/test3/static/js/main.78d5bb5b.chunk.js.map",
     "runtime-main.js": "/test3/static/js/runtime-main.62c829af.js",
     "runtime-main.js.map": "/test3/static/js/runtime-main.62c829af.js.map",
     "static/js/2.dd9b4f4f.chunk.js": "/test3/static/js/2.dd9b4f4f.chunk.js",
     "static/js/2.dd9b4f4f.chunk.js.map": "/test3/static/js/2.dd9b4f4f.chunk.js.map",
     "index.html": "/test3/index.html",
-    "static/css/main.1ce133ca.chunk.css.map": "/test3/static/css/main.1ce133ca.chunk.css.map",
+    "static/css/main.02b2d696.chunk.css.map": "/test3/static/css/main.02b2d696.chunk.css.map",
     "static/js/2.dd9b4f4f.chunk.js.LICENSE.txt": "/test3/static/js/2.dd9b4f4f.chunk.js.LICENSE.txt",
     "static/media/Card.css": "/test3/static/media/not-found.e6244c6c.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.62c829af.js",
     "static/js/2.dd9b4f4f.chunk.js",
-    "static/css/main.1ce133ca.chunk.css",
-    "static/js/main.f483a104.chunk.js"
+    "static/css/main.02b2d696.chunk.css",
+    "static/js/main.78d5bb5b.chunk.js"
   ]
 }
